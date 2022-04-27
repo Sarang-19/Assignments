@@ -1,0 +1,74 @@
+Query for creating table:
+
+create table student( stu_id int ,stu_name varchar(255),stu_class varchar(255),stu_marks int,primary key(stu_id));
+
+Query for fetching records from table:
+
+select * from student;
+
+Query for Insertion:
+
+insert into student values(2,'kamal','XII',350);
+
+Query for fetching unique records from table:
+
+select distinct stu_name from student;
+
+Query for counting unique records from table:
+
+select count(distinct stu_name) from student;
+
+Query for insertion:
+
+insert into student values(3,'vijay','XI',400);
+
+select stu_class from student where stu_id=3;
+
+Query for Sorting:
+
+select * from student order by stu_marks desc;
+
+Query for updation:
+
+update student set stu_name='Aji' where stu_id=2;
+
+Query for Deletion:
+delete from student where stu_id=11;
+
+Query for fetching the first 2 records from table:
+
+select * from student limit 2;
+
+insert into student values(3,'vj','XI',300);
+
+select * from student order by stu_id desc limit 1;
+
+Queries related to aggregate functions:
+
+select min(stu_marks) as minimum from student;
+
+select max(stu_marks) as maximum from student;
+
+select avg(stu_marks) from student;
+
+select count(stu_id)from student;
+
+select sum(stu_marks) from student;
+
+Queries related to fetching data based on a pattern:
+
+select * from student where stu_name like '_a%';
+
+select * from student where stu_name like '%A';
+
+SELECT * FROM student
+WHERE stu_marks IN (300);
+
+select * from student where stu_marks between 300 and 400;
+
+create table marks(maths int, science int, stu_name varchar(255));
+insert into marks values(95,100,'kamal');
+
+update  marks set stu_name='Ajith' where science=80;
+
+update  student set stu_name='Ajith' where stu_id=2;
