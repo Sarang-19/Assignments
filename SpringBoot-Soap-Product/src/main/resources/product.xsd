@@ -1,0 +1,78 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.com/product"
+           targetNamespace="http://www.example.com/product" elementFormDefault="qualified">
+
+<xs:element name="getProductRequest">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="product_id" type="xs:int" ></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="getProductResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Product" type="tns:Product" ></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="addProductRequest">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="product" type="tns:Product" ></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="addProductResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="response" type="xs:string" ></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="updateProductDiscountRequest">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="product_id" type="xs:int" ></xs:element>
+<xs:element name="product_discount" type="xs:int" ></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="updateProductDiscountResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="product" type="tns:Product" ></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="deleteProductRequest">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="product_id" type="xs:int" ></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="deleteProductResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="response" type="xs:string" ></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:complexType name="Product">
+<xs:sequence>
+<xs:element name="product_id" type="xs:int" ></xs:element>
+<xs:element name="product_name" type="xs:string" ></xs:element>
+<xs:element name="product_price" type="xs:int" ></xs:element>
+<xs:element name="product_discount" type="xs:int" ></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+
+</xs:schema>
