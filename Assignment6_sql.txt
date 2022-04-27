@@ -1,0 +1,22 @@
+create table student1(stu_id int primary key,stu_name varchar(50),stu_class varchar(6),stu_marks int);
+insert into student1 values(1,'Vivek','XI',459);
+insert into student1 values(4,'Lakmal','XII',300);
+delete from student1 where stu_id=2;
+select * from student1;
+select * from student;
+select * from marks;
+update student1 set stu_marks=350 where stu_name='Lakmal';
+select * from student inner join  marks on student.stu_name=marks.stu_name;
+select * from student left join marks on student.stu_name=marks.stu_name;
+select * from student right join marks on student.stu_name=marks.stu_name;
+select * from student full join marks on student.stu_name=marks.stu_name;
+
+select  stu_id,stu_marks from student union select stu_id,stu_marks from student1 ;
+select stu_id,stu_marks from student intersect select stu_id,stu_marks from student1;
+
+select stu_id,stu_name from student where exists (select * from student1 where stu_name='Lakmal');
+select * from student where stu_id = any(select stu_id from student1 where stu_class='XI');
+select * from student where stu_id > all(select stu_id from student1 where stu_class='XI');
+select * from student where stu_id = any (select stu_id from student1 where stu_name='vj');
+select * from student order by stu_name;
+select count(stu_id),stu_class from student group by stu_class order by count(stu_id);
