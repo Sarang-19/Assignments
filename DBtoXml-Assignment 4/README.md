@@ -1,5 +1,7 @@
 This assignment is regarding reading data from a Database, processing it and adding it to the Xml file.
 
+The configurations related to the batch are done in the BatchConfig class which is annotated with @Configuration and @EnableBatchProcessing.@Configuration annotation helps us to define beans for reader, writer and processor object. @EnableBatchProcessing annotation enables the spring batch features over that class.
+
 The reader object is created with JdbcCursorItemReader, since the data needs to be read from an database and the database connection details comes from the application.properties file.
 The reader object takes in an sql query, which fetch data from the database. 
 Then the data needs to be mapped to the object of Book class with attributes bookname, authorname and bookId.
