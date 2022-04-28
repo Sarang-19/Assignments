@@ -1,5 +1,7 @@
 This assignment is regarding reading data from a CSV file , processing it and writing it to the Database.
 
+The configurations related to the batch are done in the BatchConfig class which is annotated with @Configuration and @EnableBatchProcessing.@Configuration annotation helps us to define beans for reader, writer and processor object. @EnableBatchProcessing annotation enables the spring batch features over that class.
+
 I created a reader object throught FlatFileItemReader class, which reads data from the CSV file available in the class path.
 For mapping the fields to the attributes of Student class object, the reader object requires an DefaultLineMapper object which maps each line to a Student object and it 
 tokenizes the fields based on a delimiter. The BeanWrapperFieldMapper object , then maps the fields to the specified class object.
