@@ -1,0 +1,23 @@
+version: '3'
+services:
+ my-app:
+    build: .
+    container_name: my-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - app-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://app-db:5432/batch
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234
+ app-db:
+    image: postgres
+    container_name: app-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=batch
+    ports:
+      - "5432:5432"
+    
