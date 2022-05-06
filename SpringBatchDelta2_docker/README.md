@@ -27,7 +27,7 @@ The above command helps in creating a image with the name specified after -t and
 for running the container,
 docker run --name container_name image_name
 
-NOTE: since, we are running it as a jar file, we cannot use ClassPathResource object for specifying the resources in the code, rather we can FileSystemResource.
+NOTE: since, we are running it as a jar file, we cannot use ClassPathResource object for specifying the resources in the code, rather we can use FileSystemResource.
 
 If we want to fetch the output files from the container, we can use
 
